@@ -13,8 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 html, body{
     margin: 0;
     padding: 0;
+}
+
+.field label{
+  width: 100px;
+}
+
+.actions {
+  color: blue;
 }
 
