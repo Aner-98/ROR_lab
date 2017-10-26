@@ -41,7 +41,7 @@ gem "twitter-bootstrap-rails"
 #Active Admin
 gem 'activeadmin'
 
-# Plus integrations with:
+# Devise:
 gem 'devise'
 
 group :development, :test do

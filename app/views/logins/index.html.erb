@@ -1,0 +1,12 @@
+<h1>Welcome to project)</h1>
+</thead>
+<tbody>
+<% @login.each do |p| %>
+    <tr>
+      <td><%= p.email %></td>
+    </tr>
+<% end %>
+</tbody>
+</table>
+<%= link_to "Rigistration", new_login_registration_path %> or <%= link_to "Login", login_registration_path %>
+or <%= link_to "Edit", edit_login_registration_path %>

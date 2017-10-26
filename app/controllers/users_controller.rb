@@ -1,8 +1,34 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  # GET users/welcome
   def welcome
   end
+
+  # GET users/login
+  def login
+  end
+
+  # GET users/logresult
+  def logresult
+    pp params[:user][:Email]
+    pp params[:user][:Password]
+    @user = User.find_by_Email_and_Password(params[:user][:Email],params[:user][:Password])
+    if @user != nil
+      session[:user] = @user.id
+      redirect_to user_path(@user.id)
+    else
+      render 'login'
+    end
+  end
+
+  # GET users/logout
+  def logout
+    @user = User.find(session[:user])
+    session[:user] = nil
+    redirect_to root_path
+  end
+
   # GET /users
   # GET /users.json
   def index
@@ -13,7 +39,6 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
   end
-
   # GET /users/new
   def new
     @user = User.new

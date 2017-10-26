@@ -1,39 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+</head>
+<body>
+
+<p> Hi, <%=  @user.Firstname %></p>
+
+<p>We know all about you. It's yours informations.</p>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Firstname:</strong>
-  <%= @user.Firstname %>
-</p>
+<table class="table table-striped table-bordered table-list">
+  <tr>
+    <td>
+    <p>
+      <strong>Firstname:</strong>
+    </p>
+    </td>
+    <td>
+    <p>
+      <strong>Lastname:</strong>
+    </p>
+    </td>
+    <td>
+    <p>
+      <strong>Country:</strong>
+    </p>
+    </td>
+    <td>
+    <p>
+      <strong>City:</strong>
+    </p>
+    </td>
+    <td>
+    <p>
+      <strong>Number hous:</strong>
+    </p>
+    </td>
+    <td>
+    <p>
+      <strong>Email:</strong>
+    </p>
+    </td>
+    <td>
+    <p>
+      <strong>Password:</strong>
+    </p>
+    </td>
+    <td>
+      <p>
+        <em class="glyphicon glyphicon-pencil"></em>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= @user.Firstname %>
+    </td>
+    <td>
+      <%= @user.Lastname %>
+    </td>
+    <td>
+      <%= @user.Country %>
+    </td>
+    <td>
+      <%= @user.City %>
+    </td>
+    <td>
+      <%= @user.Number_hous %>
+    </td>
+    <td>
+      <%= @user.Email %>
+    </td>
+    <td>
+      <%= @user.Password %>
+    </td>
+    <td>
+      <%= link_to 'Edit', edit_user_path(@user) %>
+    </td>
+  </tr>
+</table>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @user.Lastname %>
-</p>
+<%= link_to 'Log out', logout_path(@user), :class =>"btn btn-info" %>
 
-<p>
-  <strong>Country:</strong>
-  <%= @user.Country %>
-</p>
+</body>
 
-<p>
-  <strong>City:</strong>
-  <%= @user.City %>
-</p>
-
-<p>
-  <strong>Number hous:</strong>
-  <%= @user.Number_hous %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.Email %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.Password %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+</html>

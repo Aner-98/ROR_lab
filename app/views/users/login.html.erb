@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<%= form_for :user, url:logresult_path do |f|  %>
+    <%= f.label :Email %>
+    <br>
+    <%= f.text_field :Email %>
+
+    <br>
+
+    <%= f.label :Password %>
+    <br>
+    <%= f.password_field :Password %>
+
+    <br />
+
+    <%= f.submit "Log in" %>
+<% end %>
+
+
+</body>
+
+</html>
